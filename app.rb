@@ -10,11 +10,11 @@ Time.now.utc.localtime("-04:00")
 get '/' do
   @data = [
     { 
-      'name': 'Taxa de Download', 
+      'name': 'Download Rate', 
       'data': Rate.get_download
     },
     { 
-      'name': 'Taxa de Upload', 
+      'name': 'Upload Rate', 
       'data': Rate.get_upload
     },
   ]
