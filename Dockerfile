@@ -17,4 +17,4 @@ RUN bundle install
 
 EXPOSE 4567
 
-CMD ["bundle", "exec", "puma", "-p", "4567"]
+CMD ["/bin/ls", "-l"]
