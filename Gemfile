@@ -12,4 +12,5 @@ gem 'chartkick'
 gem 'rerun'
 gem 'sqlite3'
 gem 'rake'
-gem 'puma'
+gem 'puma'gem 'whenever', require: false
+
