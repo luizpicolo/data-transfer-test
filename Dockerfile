@@ -12,8 +12,6 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /code
 COPY . /code
 
-RUN cd public && npm install
-RUN cd ..
 RUN bundle install
 
 EXPOSE 4567
