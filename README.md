@@ -20,7 +20,7 @@ After, access local respository and install the dependencies
 and
 
     cd data_transfer_test/public
-    npm install
+    yarn install
 
 # How to use
 
@@ -39,7 +39,6 @@ or
     
     rerun 'ruby app.rb'
     
-
 ## License
 
 DataTransferTest use Licença MIT. For more details read the [User License](./LICENSE.txt)
