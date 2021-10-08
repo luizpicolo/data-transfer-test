@@ -9,8 +9,14 @@ gem 'speedtest'
 gem 'sinatra'
 gem 'sinatra-activerecord'
 gem 'chartkick'
-gem 'rerun'
 gem 'sqlite3'
 gem 'rake'
-gem 'puma'gem 'whenever', require: false
+gem 'whenever', require: false
 
+group :development do
+  gem 'rerun'
+end
+
+group :production do
+  gem 'puma'
+end
