@@ -9,6 +9,8 @@ RUN apt-get update && apt-get install -y \
   apt-get update && apt-get install -y nodejs yarn sqlite3 cron
 
 ENV RACK_ENV production
+ENV TZ=America/Campo_Grande
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 WORKDIR /code
 COPY . /code
