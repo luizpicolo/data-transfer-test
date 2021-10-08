@@ -16,5 +16,3 @@ COPY . /code
 RUN bundle install
 
 EXPOSE 4567
-
-CMD ["/bin/ls", "-l"]
