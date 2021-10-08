@@ -24,27 +24,9 @@ and
 
 # How to use
 
-Add `init.rb` to your cronjob or just create an infinite loop so that data is collected during a pre-defined period.
+Create a Task Cron 
 
-init.rb
-```ruby
-require 'speedtest'
-require 'sinatra/activerecord'
-require './models/rate'
-
-test = Speedtest::Test.new(debug: false)
-
-while true
-  result = test.run
-  Rate.create({
-    download: result.pretty_download_rate,
-    upload: result.pretty_upload_rate,
-  })
-
-  # Run every 10 minutes 
-  sleep(60 * 10)
-end
-```
+    whenever --update-crontab
 
 And, in another terminal, run the `app.rb` and access `localhost:4567`
 
