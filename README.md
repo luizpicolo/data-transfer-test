@@ -24,11 +24,15 @@ and
 
 # How to use
 
-Create a Task Cron 
+Create a Cron Task
 
     whenever --update-crontab
 
-And, in another terminal, run the `app.rb` and access `localhost:4567`
+Create and migrate the database
+
+    rake db:create && rake db:migrate
+
+Execute webserver
 
     ruby app.rb 
 or
