@@ -13,6 +13,14 @@ class Rate < ActiveRecord::Base
     where(created_at: Date.today.all_day).collect { |p| [p.created_at.strftime('%d/%m %H:%M'), p.upload] }
   end
 
+  def self.average_download
+    average(:download).ceil(2) 
+  end
+
+  def self.average_upload
+    average(:upload).ceil(2) 
+  end
+
   def self.save
     test = Speedtest::Test.new(debug: false)
     result = test.run

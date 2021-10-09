@@ -8,6 +8,8 @@ set :database_file, 'config/database.yml'
 Time.now.utc.localtime("-04:00")
 
 get '/' do
+  @down_everage = Rate.average_download
+  @up_everage = Rate.average_upload
   @data = [
     { 
       'name': 'Download Rate', 
