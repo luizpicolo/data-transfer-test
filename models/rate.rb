@@ -1,6 +1,9 @@
 require 'speedtest'
 require 'sinatra/activerecord'
 
+Time.zone = "America/Campo_Grande"
+ActiveRecord::Base.default_timezone = :local
+
 class Rate < ActiveRecord::Base
   def self.get_download
     all.collect { |p| [p.created_at.strftime('%d/%m %H:%M'), p.download] }
