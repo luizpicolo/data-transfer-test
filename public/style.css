@@ -1,5 +1,9 @@
 body {
   font-family: 'Raleway', sans-serif;
-  width: 990px;
+  max-width: 990px;
   margin: 30px auto;
+}
+
+h1 {
+  text-align: center !important;
 }
