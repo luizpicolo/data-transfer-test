@@ -5,20 +5,25 @@ Time.zone = "America/Campo_Grande"
 ActiveRecord::Base.default_timezone = :local
 
 class Rate < ActiveRecord::Base
-  def self.get_download
-    where(created_at: Date.today.all_day).collect { |p| [p.created_at.strftime('%d/%m %H:%M'), p.download] }
+  def self.transfer(type_transfer)
+    self.find_rate.collect { 
+      |p| [p.created_at.strftime('%d/%m %H:%M'), p.public_send(type_transfer)] 
+    }
   end
 
-  def self.get_upload
-    where(created_at: Date.today.all_day).collect { |p| [p.created_at.strftime('%d/%m %H:%M'), p.upload] }
+  def self.average(type_transfer)
+    everage = self.find_rate.average(type_transfer)
+    everage.ceil(2)
   end
 
-  def self.average_download
-    average(:download).ceil(2) 
+  def self.extremes(type, value)
+    everage = self.find_rate.public_send(type, value)
+    everage.ceil(2)
   end
 
-  def self.average_upload
-    average(:upload).ceil(2) 
+
+  def self.find_rate
+    where(created_at: Date.today.all_day)
   end
 
   def self.save

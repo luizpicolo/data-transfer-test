@@ -1,1 +1,17 @@
+<h1>Data Transfer Test</h1>
+<section>
+  <h1>Everage: </h1>
+  <b>Download:</b> <%= @down_everage %> Mbps
+  <b>Upload:</b> <%= @up_everage %> Mbps
+</section>
+<section>
+  <h1>Maximum: </h1>
+  <b>Download:</b> <%= @max_download %> Mbps
+  <b>Upload:</b> <%= @max_upload %> Mbps
+</section>
+<section>
+  <h1>Minimum: </h1>
+  <b>Download:</b> <%= @min_download %> Mbps
+  <b>Upload:</b> <%= @min_upload %> Mbps
+</section>
 <%= bar_chart @data, xtitle: "Datetime", ytitle: "Rate", id: "users-chart", height: "700px" %>

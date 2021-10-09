@@ -8,16 +8,22 @@ set :database_file, 'config/database.yml'
 Time.now.utc.localtime("-04:00")
 
 get '/' do
-  @down_everage = Rate.average_download
-  @up_everage = Rate.average_upload
+  @down_everage = Rate.average(:download)
+  @up_everage = Rate.average(:upload)
+  
+  @max_download = Rate.extremes(:maximum, :download)
+  @min_download = Rate.extremes(:minimum, :download)
+  @max_upload = Rate.extremes(:maximum, :upload)
+  @min_upload = Rate.extremes(:minimum, :upload)
+  
   @data = [
     { 
       'name': 'Download Rate', 
-      'data': Rate.get_download
+      'data': Rate.transfer('download')
     },
     { 
       'name': 'Upload Rate', 
-      'data': Rate.get_upload
+      'data': Rate.transfer('upload')
     },
   ]
 
