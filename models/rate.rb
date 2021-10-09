@@ -6,11 +6,11 @@ ActiveRecord::Base.default_timezone = :local
 
 class Rate < ActiveRecord::Base
   def self.get_download
-    all.collect { |p| [p.created_at.strftime('%d/%m %H:%M'), p.download] }
+    where(created_at: Date.today.all_day).collect { |p| [p.created_at.strftime('%d/%m %H:%M'), p.download] }
   end
 
   def self.get_upload
-    all.collect { |p| [p.created_at.strftime('%d/%m %H:%M'), p.upload] }
+    where(created_at: Date.today.all_day).collect { |p| [p.created_at.strftime('%d/%m %H:%M'), p.upload] }
   end
 
   def self.save
