@@ -12,10 +12,10 @@ class Rate < ActiveRecord::Base
   end
 
   def self.extremes(type, value)
-    everage = self.find_rate.public_send(type, value)
-    everage.ceil(2)
+    hash = self.group("date(created_at)").public_send(type, value)
+    hash.transform_keys!{ |k| k.to_date.strftime('%d-%m') }
+    hash.transform_values!{ |v| v.ceil(2) }
   end
-
 
   def self.find_rate
     where(created_at: Date.today.all_day)
