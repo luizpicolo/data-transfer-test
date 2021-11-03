@@ -11,11 +11,6 @@ class Rate < ActiveRecord::Base
     }
   end
 
-  def self.average(type_transfer)
-    everage = self.find_rate.average(type_transfer)
-    everage.ceil(2)
-  end
-
   def self.extremes(type, value)
     everage = self.find_rate.public_send(type, value)
     everage.ceil(2)
