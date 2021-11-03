@@ -1,4 +1,4 @@
-FROM ruby:2.7.2
+FROM ruby:alpine
 
 RUN apt-get update && apt-get install -y \
   curl \
