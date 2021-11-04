@@ -1,3 +1,17 @@
-<h1>Data Transfer Test</h1>
-<%= bar_chart @transfer_rate, xtitle: "Rate", ytitle: "Datetime", id: "rate_transfer-chart", height: "700px" %>
-<%= column_chart @download_rate, xtitle: "Datetime", ytitle: "Rate", id: "download_rate-chart", height: "700px" %>
+<div class="container">
+  <h1>Tranfer data Test</h1>
+  <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3">
+    <div class="col">
+      <h2 class="text-center">Transfer Rate</h2>
+      <%= bar_chart @transfer_rate, xtitle: "Rate", ytitle: "Datetime", id: "rate_transfer-chart", height: "700px" %>
+    </div>
+    <div class="col">
+      <h2 class="text-center">Download Rate</h2>
+      <%= bar_chart @download_rate, xtitle: "Rate", ytitle: "Datetime", id: "download_rate-chart", height: "700px" %>
+    </div>
+    <div class="col">
+      <h2 class="text-center">Upload Rate</h2>
+      <%= bar_chart @upload_rate, xtitle: "Rate", ytitle: "Datetime", id: "upload_rate-chart", height: "700px" %>
+    </div>
+  </div>
+</div>

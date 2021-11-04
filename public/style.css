@@ -1,11 +1,14 @@
 body {
   font-family: 'Raleway', sans-serif;
-  max-width: 990px;
   margin: 30px auto;
 }
 
 h1 {
   text-align: center !important;
+}
+
+.container {
+  margin-top: 30px;
 }
 
 section h1 {
