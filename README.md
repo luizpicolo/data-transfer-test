@@ -4,7 +4,7 @@ Data Transfer Test is a software developed to measure the amount of data transfe
 
 # Screen
 
-![alt](https://github.com/luizpicolo/data_transfer_test/raw/master/public/images/screen.png)
+![alt](https://github.com/luizpicolo/data_transfer_test/raw/master/public/images/screen2.png)
 
 # How to configure
 
@@ -22,9 +22,9 @@ and
     cd data_transfer_test/public
     yarn install
 
-# How to use
+# How to use 
 
-Create a Cron Task
+Create a Cron Task (Test with ubuntu)
 
     whenever --update-crontab
 
