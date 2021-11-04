@@ -17,6 +17,11 @@ get '/' do
     {'name': 'Max Download Rate', 'data': Rate.extremes(:maximum, :download)},
     {'name': 'Min Download Rate', 'data': Rate.extremes(:minimum, :download)},
     {'name': 'Everage Download Rate', 'data': Rate.extremes(:average, :download)}
+
+  @upload_rate = [
+    {'name': 'Max', 'data': Rate.extremes(:maximum, :upload)},
+    {'name': 'Min', 'data': Rate.extremes(:minimum, :upload)},
+    {'name': 'Everage', 'data': Rate.extremes(:average, :upload)}
   ]
 
   erb :home
