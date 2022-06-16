@@ -3,7 +3,7 @@ services:
   app:
     build: 
       context: .
-      dockerfile: /home/server/apps/data_transfer_test/Dockerfile
+      dockerfile: Dockerfile
     restart: unless-stopped
     tty: true
     container_name: app
