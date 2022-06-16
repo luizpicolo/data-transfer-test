@@ -13,8 +13,7 @@ ENV TZ=America/Campo_Grande
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 WORKDIR /code
-ADD Gemfile /code
-ADD Gemfile.lock /code
+COPY . /code
 
 RUN bundle install
 
