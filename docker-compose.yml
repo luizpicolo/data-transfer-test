@@ -4,7 +4,7 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
-    #restart: unless-stopped
+    restart: unless-stopped
     tty: true
     container_name: app
     command: bundle exec ruby app.rb -o 0.0.0.0 -p 4567
