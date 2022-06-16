@@ -8,3 +8,4 @@ docker-compose run app yarn --cwd public/
 
 echo '--- update cronjob'
 docker-compose run app whenever -w
+docker-compose run app sh /etc/init.d/cron restart
