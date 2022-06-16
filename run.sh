@@ -7,4 +7,7 @@ echo '--- run bundle install'
 bundle install
 
 echo '--- create docker image and up it'
-sudo docker-compose up -d --build
+docker-compose up -d --build
+
+echo '--- update cronjob'
+docker-compose run app whenever -w
