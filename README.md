@@ -24,7 +24,7 @@ and
 
 # How to use 
 
-Create a Cron Task (Test with ubuntu)
+Create a Cron Task (Test with Debian)
 
     whenever -w
 
