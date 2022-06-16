@@ -12,4 +12,14 @@ services:
       - "4567:4567"
     volumes:
       - .:/code
-  
+
+  cron:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    tty: true
+    container_name: cron
+    command: whenever -i
+    volumes:
+      - .:/code
