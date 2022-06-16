@@ -9,9 +9,9 @@ services:
     container_name: app
     command: >
       bash -c "yarn --cwd public/ &&
-              whenever -w &&
-              /etc/init.d/cron restart &&
-              bundle exec ruby app.rb -o 0.0.0.0 -p 4567"
+               whenever -w &&
+               /etc/init.d/cron restart &&
+               bundle exec ruby app.rb -o 0.0.0.0 -p 4567"
     ports:
       - "4567:4567"
     volumes:
