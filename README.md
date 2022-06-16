@@ -26,7 +26,7 @@ and
 
 Create a Cron Task (Test with ubuntu)
 
-    whenever --update-crontab
+    whenever -w
 
 Create and migrate the database
 
