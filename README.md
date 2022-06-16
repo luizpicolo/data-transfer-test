@@ -4,7 +4,7 @@ Data Transfer Test is a software developed to measure the amount of data transfe
 
 # Screen
 
-![alt](https://github.com/luizpicolo/data_transfer_test/raw/master/public/images/screen2.png)
+![alt](https://github.com/luizpicolo/data_transfer_test/blob/main/public/images/screen3.png?raw=true)
 
 # How to configure
 
