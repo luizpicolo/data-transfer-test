@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     restart: unless-stopped
     tty: true
-    container_name: app
+    container_name: data_transfer_test_app
     command: >
       bash -c "yarn --cwd public/ &&
                whenever -w &&
