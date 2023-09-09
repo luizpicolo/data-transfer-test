@@ -1,5 +1,12 @@
 <div class="container">
   <h1>Data Transfer Test</h1>
+  <div class="text-center">
+    <h2>Last Check</h2>
+    <div><%= Rate.last_time %></div>
+    Download: <%= Rate.last_value('download') %>
+    Upload: <%= Rate.last_value('upload') %>
+  </div>
+  <br />
   <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3">
     <div class="col">
       <h2 class="text-center">Transfer Rate</h2>

@@ -23,3 +23,7 @@ section {
 canvas {
   margin-top: 15px;
 }
+
+.lastcheck {
+  margin-right: 20px !important;
+}
