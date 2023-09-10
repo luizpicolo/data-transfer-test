@@ -21,6 +21,14 @@ class Rate < ActiveRecord::Base
     where(created_at: Date.today.all_day)
   end
 
+  def self.last_time
+    self.transfer('download').last.first
+  end
+
+  def self.last_value(type)
+    self.transfer(type).last.last
+  end
+
   def self.save
     test = Speedtest::Test.new(debug: false)
     result = test.run
