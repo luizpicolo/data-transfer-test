@@ -15,18 +15,13 @@ GEM
     chronic (0.10.2)
     concurrent-ruby (1.2.2)
     ffi (1.15.5)
-    httparty (0.21.0)
-      mini_mime (>= 1.0.0)
-      multi_xml (>= 0.5.2)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     listen (3.8.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    mini_mime (1.1.5)
     mini_portile2 (2.8.4)
     minitest (5.20.0)
-    multi_xml (0.6.0)
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
     nio4r (2.5.9)
@@ -50,8 +45,6 @@ GEM
     sinatra-activerecord (2.0.26)
       activerecord (>= 4.1)
       sinatra (>= 1.0)
-    speedtest (0.2.3)
-      httparty (~> 0.13)
     sqlite3 (1.6.5)
       mini_portile2 (~> 2.8.0)
     tilt (2.2.0)
@@ -71,7 +64,6 @@ DEPENDENCIES
   rerun
   sinatra
   sinatra-activerecord
-  speedtest
   sqlite3
   whenever
 
