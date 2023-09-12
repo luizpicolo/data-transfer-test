@@ -1,4 +1,3 @@
-require 'speedtest'
 require 'sinatra/activerecord'
 
 Time.zone = "America/Campo_Grande"
