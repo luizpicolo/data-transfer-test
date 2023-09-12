@@ -29,7 +29,7 @@ class Rate < ActiveRecord::Base
   end
 
   def self.save
-    results = run_speedtest
+    results = self.run_speedtest
     if results
       Rate.create({
         download: results[:download],
@@ -38,7 +38,7 @@ class Rate < ActiveRecord::Base
     end
   end
 
-  def run_speedtest
+  def self.run_speedtest
     output = `speedtest`
     if $?.success?
       download_speed = output.match(/Download:\s+(\d+\.\d+)\sMbps/)[1]
