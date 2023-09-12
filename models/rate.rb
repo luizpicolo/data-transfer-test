@@ -39,7 +39,7 @@ class Rate < ActiveRecord::Base
   end
 
   def self.run_speedtest
-    output = `speedtest`
+    output = `speedtest --accept-license --accept-gdpr`
     if $?.success?
       download_speed = output.match(/Download:\s+(\d+\.\d+)\sMbps/)[1]
       upload_speed = output.match(/Upload:\s+(\d+\.\d+)\sMbps/)[1]
