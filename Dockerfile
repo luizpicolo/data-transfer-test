@@ -8,6 +8,10 @@ RUN apt-get update && apt-get install -y \
   echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
   apt-get update && apt-get install -y nodejs yarn sqlite3 cron g++
 
+# Instalação do speedtest-cli
+RUN curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | bash \
+    && apt-get install speedtest
+
 ENV RACK_ENV production
 ENV TZ=America/Campo_Grande
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
