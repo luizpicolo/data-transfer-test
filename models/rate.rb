@@ -2,7 +2,7 @@ require 'speedtest'
 require 'sinatra/activerecord'
 
 Time.zone = "America/Campo_Grande"
-ActiveRecord::Base.default_timezone = :local
+ActiveRecord.default_timezone = :local
 
 class Rate < ActiveRecord::Base
   def self.transfer(type_transfer)
