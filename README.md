@@ -38,6 +38,16 @@ Execute webserver
 or
     
     rerun 'ruby app.rb'
+
+## Docker
+
+    docker compose up -d
+    docker compose run app rake db:create && rake db:migrate
+    docker compose run app whenever -w
+
+## Live Server
+
+    https://dtt.luizpicolo.com.br
     
 ## License
 
