@@ -28,6 +28,19 @@ class Rate < ActiveRecord::Base
     self.transfer(type).last.last
   end
 
+  def self.above_contracted_rate(rate, type)
+    count = 0
+    array = self.transfer(type)
+
+    array.each do |entry|
+      if entry[1] > rate.to_i
+        count += 1
+      end
+    end
+
+    "#{((count.to_f / array.length) * 100).round(2)}%"
+  end
+
   def self.save
     results = self.run_speedtest
     if results

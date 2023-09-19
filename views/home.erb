@@ -2,9 +2,10 @@
   <h1>Data Transfer Test</h1>
   <div class="text-center">
     <h2>Last Check</h2>
-    <div><%= Rate.last_time %></div>
-    Download: <%= Rate.last_value('download') %>
-    Upload: <%= Rate.last_value('upload') %>
+    <div class="text-center"><%= Rate.last_time %></div>
+    <b>Download:</b> <%= Rate.last_value('download') %> is <%= Rate.above_contracted_rate('600', 'download')%> on time
+    <br />
+    <b>Upload:</b> <%= Rate.last_value('upload') %> is <%= Rate.above_contracted_rate('300', 'upload')%> on time
   </div>
   <br />
   <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3">
