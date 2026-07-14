@@ -44,6 +44,7 @@ or
     docker compose up -d
     docker compose run app sh -lc 'cd /public && yarn install'
     docker compose run app sh -lc 'rake db:create && rake db:migrate'
+    docker compose run app sh -lc 'rake rate:save'
     docker compose run app whenever -w
 
 ## Live Server
