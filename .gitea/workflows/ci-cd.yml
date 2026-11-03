@@ -1,0 +1,36 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  APP_NAME: data-transfer-test
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check Docker
+        run: docker compose version
+
+      - name: Create database volume
+        run: docker volume create data_transfer_test_database
+
+      - name: Build
+        run: docker compose -p "$APP_NAME" build app scheduler
+
+      - name: Execute migration
+        run: docker compose -p "$APP_NAME" run --rm --no-deps app bundle exec rake db:migrate
+
+      - name: Collect initial data
+        run: docker compose -p "$APP_NAME" run --rm --no-deps app bundle exec rake rate:save
+
+      - name: Deploy
+        run: docker compose -p "$APP_NAME" up -d --no-build app scheduler

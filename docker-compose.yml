@@ -1,14 +1,31 @@
 services:
   app:
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile
     restart: unless-stopped
-    tty: true
     container_name: data_transfer_test_app
-    command: >
-      bash -c "bundle exec ruby app.rb -o 0.0.0.0 -p 4567"
+    environment:
+      RACK_ENV: production
+      RAILS_ENV: production
     ports:
       - "4567:4567"
     volumes:
-      - .:/code
+      - app_database:/db
+
+  scheduler:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    command: ["cron", "-f"]
+    environment:
+      RACK_ENV: production
+      RAILS_ENV: production
+    volumes:
+      - app_database:/db
+      
+volumes:
+  app_database:
+    external: true
+    name: data_transfer_test_database
