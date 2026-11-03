@@ -49,7 +49,6 @@ WORKDIR /code
 
 COPY Gemfile Gemfile.lock ./
 RUN bundle install
-RUN cd /code/public && yarn install
 
 COPY . .
 
