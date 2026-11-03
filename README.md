@@ -24,10 +24,6 @@ and
 
 # How to use 
 
-Create a Cron Task (Test with Debian)
-
-    whenever -w
-
 Create and migrate the database
 
     rake db:create && rake db:migrate
@@ -45,7 +41,6 @@ or
     docker compose run app sh -lc 'cd /public && yarn install'
     docker compose run app sh -lc 'rake db:create && rake db:migrate'
     docker compose run app sh -lc 'rake rate:save'
-    docker compose run app whenever -w
 
 ## Live Server
 
