@@ -1,0 +1,42 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  APP_NAME: data-transfer-test
+
+jobs:
+  # test:
+  #   name: Test
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v4
+
+  #     - name: Bun install
+  #       uses: oven-sh/setup-bun@v2
+
+  #     - name: Dependency install
+  #       run: bun install --frozen-lockfile
+
+  #     - name: Test execute
+  #       run: bun run test
+
+  deploy:
+    name: Deploy
+    # needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check Docker
+        run: docker compose version
+
+      - name: Deploy
+        run: docker compose -p "$APP_NAME" up -d --build

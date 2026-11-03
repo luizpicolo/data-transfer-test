@@ -20,5 +20,6 @@ WORKDIR /code
 COPY . /code
 
 RUN bundle install
+RUN cd /code/public && yarn install
 
 EXPOSE 4567
